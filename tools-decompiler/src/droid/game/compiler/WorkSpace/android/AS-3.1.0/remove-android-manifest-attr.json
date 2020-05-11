@@ -1,0 +1,7 @@
+[
+  "platformBuildVersionName",
+  "platformBuildVersionCode",
+  "android:compileSdkVersion",
+  "android:compileSdkVersionCodename",
+  "android:installLocation"
+]

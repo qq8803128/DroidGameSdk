@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="#c5000000"
+              android:paddingLeft="18dp"
+              android:paddingRight="18dp"
+              android:layout_height="40dp">
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:id="@id/droid_game_sdk_self_auto_login_page"
+                 android:layout_height="40dp">
+        <LinearLayout android:layout_width="match_parent"
+                      android:gravity="center"
+                      android:orientation="horizontal"
+                      android:layout_height="40dp">
+
+            <ProgressBar android:layout_width="20dp"
+                         android:indeterminateDrawable="@drawable/droid_game_sdk_self_layer_auto_login_loading"
+                         android:layout_height="20dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:paddingLeft="12dp"
+                      android:paddingRight="12dp"
+                      android:singleLine="true"
+                      android:ellipsize="end"
+                      android:textSize="13sp"
+                      android:textColor="#ff8200"
+                      android:text="用户185****6949登录中"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:text="切换账号"
+                      android:textSize="13sp"
+                      android:id="@id/droid_game_sdk_self_auto_login_switch"
+                      android:gravity="center"
+                      android:background="@drawable/droid_game_sdk_self_selector_auto_login_loading_button"
+                      android:paddingLeft="12dp"
+                      android:textColor="#ff8200"
+                      android:paddingRight="12dp"
+                      android:layout_height="24dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:gravity="center"
+                      android:visibility="gone"
+                      android:orientation="horizontal"
+                      android:layout_height="40dp">
+
+            <ImageView android:layout_width="20dp"
+                       android:src="@mipmap/droid_game_sdk_self_ic_login_tick"
+                         android:layout_height="20dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:paddingLeft="12dp"
+                      android:paddingRight="12dp"
+                      android:singleLine="true"
+                      android:ellipsize="end"
+                      android:textSize="13sp"
+                      android:textColor="#ff8200"
+                      android:text="用户185****6949，欢迎回来"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

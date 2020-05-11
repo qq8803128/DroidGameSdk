@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.net.URL?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<AnchorPane id="root" prefHeight="60.0"
+            fx:controller="droid.game.compiler.ui.AlertInit"
+            prefWidth="140.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+    <stylesheets>
+        <URL value="@dlg_init_env.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="mCloseInit" layoutX="46.0" layoutY="23.0" text="初始化中" />
+   </children>
+</AnchorPane>

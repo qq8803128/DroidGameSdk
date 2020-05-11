@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="droid_game_sdk_self_online_title_bar_height">48dp</dimen>
+    <dimen name="droid_game_sdk_self_online_title_bar_shadow_height">6dp</dimen>
+    <dimen name="droid_game_sdk_self_online_title_bar_image_size">@dimen/droid_game_sdk_self_online_title_bar_height</dimen>
+
+    <dimen name="droid_game_sdk_self_online_vertical_margin">12dp</dimen>
+    <dimen name="droid_game_sdk_self_online_edit_text_container_height">48dp</dimen>
+    <dimen name="droid_game_sdk_self_top_divider_height">3dp</dimen>
+
+    <dimen name="droid_game_sdk_self_online_input_height">48dp</dimen>
+
+
+    <dimen name="droid_game_sdk_self_online_button_height">48dp</dimen>
+</resources>

@@ -1,0 +1,14 @@
+{
+  "apktool":{
+    "dir":"",
+    "name":"apktool_2.4.0.jar"
+  },
+  "dex2jar":{
+    "dir":"dex-tools-2.1-snapshot",
+    "name":"d2j-dex2jar.bat"
+  },
+  "enjarify":{
+    "dir":"enjarify-1.0.3",
+    "name":"enjarify.bat"
+  }
+}

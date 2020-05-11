@@ -1,0 +1,119 @@
+{
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "loginWay": 1,
+    //0为切登录状态
+    "notice": "",
+    //公告内容
+    "userProtocalUrl": "",
+    //用户协议地址
+    "avoidIndulge": 0,
+    //是否需要实名认证
+    "forceAvoidIndulge": 0,
+    //是否强制实名认证
+    "servicePP": "",
+    //客服QQ号
+    "servicePPName": "",
+    //客服QQ昵称
+    "servicePPUrl": "",
+    //加客服QQ跳转scheme
+    "gamePPGroup": "",
+    //游戏Q群
+    "gamePPGroupUrl": "",
+    //加游戏Q群跳转shceme
+    "wPublicAccount": "",
+    //游戏微博账号
+    "wPublicAccountName": "",
+    //游戏微博账号昵称
+    "weiboName": "",
+    //微博名
+    "weiboUid": "",
+    //微博ID
+    "weiboUrl": "",
+    //微博地址
+    "package": {
+      "versionName": "1.0.1",
+      //服务器最新版本名称
+      "versionCode": 2,
+      //服务器最新版本号
+      "description": "",
+      //更新描述
+      "url": "",
+      //更新地址
+      "size": 1000152,
+      //更新包大小
+      "forceUpdate": false,
+      //是否是强制更新
+      "appId": "",
+      //微信AppId
+      "shareUrl": ""
+      //分享地址
+    },
+    "stats": {
+      //三方数据和广告统计
+      "disableReyun": true,
+      //热云
+      "reyunAppkey": "",
+      "disableToutiao": true,
+      //头条
+      "toutiaoAppName": "",
+      "toutiaoAppId": "",
+      "toutiaoAppkey": "",
+      "disableGdt": true,
+      //广点通
+      "gdtUserActionSetId": "",
+      "gdtAppSecretKey": "",
+      "gdtAccessToken": "",
+      "gdtAccountId": "",
+      "disableKuaishou": true,
+      //快手
+      "kuaishouAppId": "",
+      "kuaishouAppName": "",
+      "kuaishouAppChannel": ""
+    },
+    "plugin-v3": [
+      {
+        "name": "",
+        "version": 1,
+        "url": "",
+        "md5": "",
+        "size": 0
+      }
+    ],
+    "adList": [
+      {
+        "position": 1,
+        "showStyle": 1,
+        "maxNum": 99,
+        "platform": {
+          "name": "chuanshanjia",
+          "config": {
+            "appId": "5034471"
+          },
+          "ads": {
+            "id": 3,
+            "codeId": "934471995",
+            "key": "046f5de5d18ddf554a65c57264007e5e"
+          }
+        }
+      },
+      {
+        "position":"2",
+        "showStyle":1,
+        "maxNum":99,
+        "platform":{
+          "name":"chuanshanjia",
+          "config":{
+            "appId":"5034471"
+          },
+          "ads":{
+            "id":4,
+            "codeId":"934471646",
+            "key":"632d51e69838bc1ffd1afd33f4fbbbc6"
+          }
+        }
+      }
+    ]
+  }
+}

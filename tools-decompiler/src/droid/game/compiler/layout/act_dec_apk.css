@@ -1,0 +1,51 @@
+#root {
+    -fx-border-width:1;-fx-border-color:#4A5459;
+}
+
+#top {
+    -fx-background-color: #4A5459;
+}
+
+#min {
+    -fx-base: #4A5459;
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+}
+
+#close {
+    -fx-base: rgb(255,128,128);
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+}
+
+#bottom {
+   -fx-background-insets: 0;
+    -fx-text-fill: white ;
+    -fx-base: #4A5459;
+}
+
+.text-area{
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.text-area .content {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.text-area:focused {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.text-area .scroll-pane .content {
+-fx-background-color: white;
+}
+
+
+#htmlEditer {
+    -fx-font: 10 system;
+    -fx-border-color: brown;
+    -fx-border-style: dotted;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}

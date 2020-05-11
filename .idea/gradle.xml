@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/androidStub" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/butterknife-compiler" />
+            <option value="$PROJECT_DIR$/plugin-delegate-sdk" />
+            <option value="$PROJECT_DIR$/support-admob" />
+            <option value="$PROJECT_DIR$/support-android-oaid" />
+            <option value="$PROJECT_DIR$/support-android-support" />
+            <option value="$PROJECT_DIR$/support-annotation" />
+            <option value="$PROJECT_DIR$/support-base-plugin" />
+            <option value="$PROJECT_DIR$/support-butterknife" />
+            <option value="$PROJECT_DIR$/support-common" />
+            <option value="$PROJECT_DIR$/support-core" />
+            <option value="$PROJECT_DIR$/support-core-bridge" />
+            <option value="$PROJECT_DIR$/support-instant-run" />
+            <option value="$PROJECT_DIR$/support-open-source" />
+            <option value="$PROJECT_DIR$/support-permission" />
+            <option value="$PROJECT_DIR$/support-plugin-manager" />
+            <option value="$PROJECT_DIR$/support-x2c" />
+            <option value="$PROJECT_DIR$/x2c-compiler" />
+            <option value="$PROJECT_DIR$/xsdk-inner" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

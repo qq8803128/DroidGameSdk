@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+<BorderPane id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="droid.game.compiler.ui.DecApkActivity">
+
+    <stylesheets>
+        <URL value="@act_dec_apk.css" />
+    </stylesheets>
+
+    <top>
+    <fx:include source="include_tool_bar.fxml" onMouseDragged="#onWindowDragged"
+                onMousePressed="#onWindowPressed"/>
+    </top>
+    <center>
+        <HTMLEditor fx:id="mLogCat" id="htmlEditer" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        </HTMLEditor>
+
+    </center>
+
+    <bottom>
+        <Button id="bottom" alignment="CENTER" prefHeight="36.0" prefWidth="600.0" text="反编译"
+                fx:id="mNext"
+                onAction="#doDecompileApk"
+                textFill="WHITE" >
+            <font>
+                <Font size="14"/>
+            </font>
+        </Button>
+    </bottom>
+</BorderPane>

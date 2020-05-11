@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="droid_game_sdk_self_title_bar_left_image_view"/>
+    <item type="id" name="droid_game_sdk_self_title_bar_center_text_view"/>
+    <item type="id" name="droid_game_sdk_self_title_bar_right_image_view"/>
+    <item type="id" name="droid_game_sdk_self_button_major"/>
+    <item type="id" name="droid_game_sdk_self_button_assist"/>
+    <item name="droid_game_sdk_self_input_text" type="id"/>
+    <item name="droid_game_sdk_self_input_password" type="id"/>
+    <item name="droid_game_sdk_self_input_code" type="id"/>
+</resources>

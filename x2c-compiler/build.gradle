@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':support-x2c')
+    implementation 'com.google.auto.service:auto-service:1.0-rc4'
+    implementation 'com.google.auto:auto-common:0.10'
+    implementation 'com.google.guava:guava:24.0-jre'
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

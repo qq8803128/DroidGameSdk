@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: droid.game.gradle.Aapt3Plugin
+
+android {
+    compileSdkVersion 29
+
+    resourcePrefix 'droid_game_sdk_self_'
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions 'droid'
+    }
+
+    signingConfigs {
+        debug {
+            v2SigningEnabled false
+            keyAlias 'game91'
+            keyPassword 'game91'
+            storeFile file(jksFile)
+            storePassword 'game91'
+        }
+        release {
+            v2SigningEnabled false
+            keyAlias 'game91'
+            keyPassword 'game91'
+            storeFile file(jksFile)
+            storePassword 'game91'
+        }
+    }
+    
+    productFlavors{
+        core{
+            versionCode 1
+            versionName "1.0"
+            applicationId 'droid.game.plugin.core'
+            manifestPlaceholders = [
+                    'applicationName' : 'SDK核心插件'
+            ]
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //在这里修改apk文件名
+                variant.getPackageApplication().outputDirectory = project.parent.file("app/src/main/assets/android.gamecenter.system/internal_plugins/")
+                outputFileName = "${variant.productFlavors[0].name.toString()}.apk"
+            }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compileOnly project(':support-common')
+    compileOnly project(':support-core')
+    compileOnly project(':support-core-bridge')
+    compileOnly project(':support-open-source')
+    compileOnly project(':support-plugin-manager')
+
+    compileOnly project(':support-butterknife')
+    annotationProcessor project(':butterknife-compiler')
+
+    compileOnly files('../support-open-source/libs/adapter-rxjava2-2.6.0.jar')
+    compileOnly files('../support-open-source/libs/reactive-streams-1.0.3.jar')
+    compileOnly files('../support-open-source/libs/rxandroid-2.1.1.jar')
+    compileOnly files('../support-open-source/libs/rxjava-2.2.14.jar')
+
+    implementation project(':support-x2c')
+    annotationProcessor project(':x2c-compiler')
+}

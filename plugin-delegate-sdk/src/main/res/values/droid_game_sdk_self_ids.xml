@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="droid_game_sdk_self_open_name_login_from_mobile_login" type="id"/>
+    <item name="droid_game_sdk_self_register_name_user_protocol" type="id"/>
+    <item name="droid_game_sdk_self_open_mobile_register_from_name_register" type="id"/>
+    <item name="droid_game_sdk_self_open_name_login_from_mobile_register" type="id"/>
+    <item name="droid_game_sdk_self_open_name_register_from_mobile_register" type="id"/>
+    <item name="droid_game_sdk_self_account_select_other_account" type="id"/>
+    <item name="droid_game_sdk_self_account_select_list" type="id"/>
+    <item name="droid_game_sdk_self_open_quick_login_page" type="id"/>
+    <item name="droid_game_sdk_self_open_mobile_login_page" type="id"/>
+    <item name="droid_game_sdk_self_open_mobile_register_page" type="id"/>
+    <item name="droid_game_sdk_self_dialog_login_page" type="id"/>
+    <item name="droid_game_sdk_self_open_name_login_from_miss_password" type="id"/>
+    <item name="droid_game_sdk_self_open_miss_password" type="id"/>
+    <item name="droid_game_sdk_self_register_mobile_user_protocol" type="id"/>
+    <item name="droid_game_sdk_self_dialog_loading_page" type="id"/>
+    <item name="droid_game_sdk_self_do_name_login" type="id"/>
+    <item name="droid_game_sdk_self_edit_name_login_account" type="id"/>
+    <item name="droid_game_sdk_self_edit_name_login_password" type="id"/>
+    <item name="droid_game_sdk_self_edit_name_register_account" type="id"/>
+    <item name="droid_game_sdk_self_edit_name_register_password" type="id"/>
+    <item name="droid_game_sdk_self_edit_mobile_login_phone_number" type="id"/>
+    <item name="droid_game_sdk_self_edit_mobile_login_phone_code" type="id"/>
+    <item name="droid_game_sdk_self_edit_mobile_register_phone_number" type="id"/>
+    <item name="droid_game_sdk_self_edit_mobile_register_phone_code" type="id"/>
+    <item name="droid_game_sdk_self_edit_mobile_register_password" type="id"/>
+    <item name="droid_game_sdk_self_edit_miss_password_phone_number" type="id"/>
+    <item name="droid_game_sdk_self_edit_miss_password_phone_code" type="id"/>
+    <item name="droid_game_sdk_self_edit_miss_password_password" type="id"/>
+
+    <item name="droid_game_sdk_self_auto_login_page" type="id"/>
+    <item name="droid_game_sdk_self_auto_login_switch" type="id"/>
+
+    <item name="droid_game_sdk_self_skip_certification" type="id"/>
+    <item name="droid_game_sdk_self_cancel_certification" type="id"/>
+    <item name="droid_game_sdk_self_do_certification" type="id"/>
+    <item name="droid_game_sdk_self_open_certification_page" type="id"/>
+    <item name="droid_game_sdk_self_certification_page" type="id"/>
+
+    <item name="droid_game_sdk_self_cancel_bind_mobile" type="id"/>
+    <item name="droid_game_sdk_self_do_bind_mobile" type="id"/>
+
+    <item name="droid_game_sdk_self_dialog_payment_page" type="id"/>
+    <item name="droid_game_sdk_self_dialog_payment_swicth_pay_way" type="id"/>
+    <item name="droid_game_sdk_self_dialog_payment_back_to_pay_page" type="id"/>
+    <item name="droid_game_sdk_self_dialog_payment_cancel" type="id"/>
+</resources>

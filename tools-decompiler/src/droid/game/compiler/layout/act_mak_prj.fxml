@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.web.HTMLEditor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Font?>
+<BorderPane id="root"
+            maxHeight="600.0"
+            maxWidth="980.0"
+            minHeight="600.0"
+            minWidth="980.0"
+            prefHeight="600.0" prefWidth="980.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="droid.game.compiler.ui.MakPrjActivity">
+
+    <stylesheets>
+        <URL value="@act_mak_prj.css" />
+    </stylesheets>
+    <top>
+        <fx:include source="include_tool_bar.fxml" onMouseDragged="#onWindowDragged"
+                    onMousePressed="#onWindowPressed"/>
+    </top>
+    <left>
+        <ListView fx:id="mListView"  prefWidth="250" BorderPane.alignment="CENTER"/>
+    </left>
+    <center>
+        <HTMLEditor fx:id="mLogCat" id="htmlEditer" BorderPane.alignment="CENTER">
+        </HTMLEditor>
+    </center>
+
+    <bottom>
+        <Button id="bottom" alignment="CENTER" prefHeight="36.0" prefWidth="980.0" text="生成AS工程"
+                fx:id="mNext"
+                onAction="#doMakeProject"
+                textFill="WHITE" >
+            <font>
+                <Font size="14"/>
+            </font>
+        </Button>
+    </bottom>
+</BorderPane>

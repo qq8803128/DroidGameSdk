@@ -1,0 +1,49 @@
+import com.android.build.gradle.api.LibraryVariant
+import com.google.common.base.Joiner
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly project(':support-common')
+    compileOnly project(':androidStub')
+    api project(':support-plugin-manager')
+}
+
+
+
+afterEvaluate {
+    project.android.libraryVariants.each { LibraryVariant variant ->
+        variant.javaCompile.doFirst { JavaCompile javaCompile ->
+            String projectAndroidStubPath = project.project(':androidStub').projectDir.canonicalPath
+            File stubPath = javaCompile.classpath.find {
+                it.canonicalPath.startsWith(projectAndroidStubPath)
+            }
+            if (stubPath == null) {
+                throw new RuntimeException("reset bootclasspath error.")
+            }
+            javaCompile.options.setBootClasspath(Joiner.on(File.pathSeparator).join(stubPath, javaCompile.options.bootClasspath))
+        }
+    }
+}

@@ -1,0 +1,4 @@
+ext{
+    AndroidFrameworkJar = 'G:/android-sdk/platforms/android-28/android.jar'
+    jksFile = 'G:/keystore/game91.jks'
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="droid_game_sdk_self_misspassword">忘记密码?</string>
+    <string name="droid_game_sdk_self_do_login">立即登录</string>
+    <string name="droid_game_sdk_self_do_register_mobile">手机注册</string>
+    <string name="droid_game_sdk_self_english_digits">"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?._~,!@#$%^*':;`-|"</string>
+    <string name="droid_game_sdk_self_identity_digits">0123456789Xx</string>
+    <string name="droid_game_sdk_self_numbers_digits">0123456789</string>
+    <string name="droid_game_sdk_self_password_digits">"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?._~,!@#$%^*':;`-| "</string>
+</resources>

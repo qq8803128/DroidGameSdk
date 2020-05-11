@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<GridPane id="top" alignment="CENTER_LEFT" prefHeight="36.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="droid.game.compiler.ui.ToolBar">
+    <children>
+        <Label text=" " />
+
+        <ImageView fitHeight="20" onMouseClicked="#openWorkSpace" fitWidth="20" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+            <image>
+                <Image url="@../mipmap/ic_launcher.png" />
+            </image>
+        </ImageView>
+
+        <Label id="title" text=" APK反编译工具" textFill="WHITE" GridPane.columnIndex="2">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+
+        <Label text=" " GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" />
+
+        <Button id="min" fx:id="mTopBtn" alignment="CENTER" prefWidth="30" rotate="180" text="▲" GridPane.columnIndex="4">
+            <tooltip>
+                <Tooltip text="窗口置顶" />
+            </tooltip>
+        </Button>
+
+        <Button id="min" fx:id="mMinBtn" alignment="CENTER" prefWidth="30" rotate="180" text="—" GridPane.columnIndex="5" />
+
+        <Button id="close" fx:id="mCloseBtn" alignment="CENTER" prefWidth="30" text="X" GridPane.columnIndex="6" />
+
+        <Label text=" " GridPane.columnIndex="7" />
+    </children>
+
+</GridPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:gravity="center_vertical"
+              android:layout_width="match_parent"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:background="@drawable/droid_game_sdk_self_shape_holder_account_background"
+              android:layout_height="56dp">
+
+    <ImageView android:layout_width="36dp"
+               android:src="@mipmap/droid_game_sdk_self_ic_sdk_logo"
+               android:background="@drawable/droid_game_sdk_self_shape_holder_icon_background"
+               android:padding="8dp"
+               android:layout_height="36dp"/>
+
+    <LinearLayout android:layout_width="0dp"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="10dp"
+                  android:layout_weight="1"
+                  android:orientation="vertical"
+                  android:gravity="center_vertical"
+                  android:layout_height="match_parent">
+
+        <TextView android:layout_width="match_parent"
+                  android:textColor="#ffffff"
+                  android:textSize="14sp"
+                  android:text="185****6949"
+                  android:layout_height="wrap_content"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:textColor="#afafaf"
+                  android:textSize="12sp"
+                  android:singleLine="true"
+                  android:text="最后登录时间:2019-12-20 15:51"
+                  android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="14dp"
+               android:src="@mipmap/droid_game_sdk_self_ic_edit_down"
+               android:rotation="270"
+               android:layout_height="14dp"/>
+</LinearLayout>

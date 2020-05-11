@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="250dp">
+
+    <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+        <TextView android:layout_width="match_parent"
+                  android:textSize="14sp"
+                  android:textStyle="bold"
+                  android:gravity="center"
+                  android:text="已有账号登录"
+                  android:textColor="#ffffff"
+                  android:layout_height="match_parent"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:text="其他账号"
+                  android:id="@id/droid_game_sdk_self_account_select_other_account"
+                  android:textSize="12sp"
+                  android:textColor="#ff8200"
+                  android:layout_alignParentRight="true"
+                  android:gravity="center"
+                  android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+    <ListView android:layout_width="match_parent"
+              android:dividerHeight="8dp"
+              android:divider="#00000000"
+              android:id="@id/droid_game_sdk_self_account_select_list"
+              android:layout_marginBottom="9dp"
+              android:scrollbars="none"
+              android:overScrollMode="never"
+              android:layout_height="match_parent"/>
+
+</LinearLayout>

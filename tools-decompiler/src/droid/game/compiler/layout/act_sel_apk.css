@@ -1,0 +1,19 @@
+#root {
+    -fx-border-width:1;-fx-border-color:#4A5459;
+}
+
+#top {
+    -fx-background-color: #4A5459;
+}
+
+#min {
+    -fx-base: #4A5459;
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+}
+
+#close {
+    -fx-base: rgb(255,128,128);
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+}

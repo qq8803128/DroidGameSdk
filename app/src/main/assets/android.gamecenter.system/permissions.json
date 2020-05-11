@@ -1,0 +1,7 @@
+{
+  "user-protocol":"file:////android_asset/android.gamecenter.system/permissions.html",
+  "auto-request-permission":true,
+  "remove-permission": [
+
+  ]
+}

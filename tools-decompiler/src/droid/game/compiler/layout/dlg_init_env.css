@@ -1,0 +1,7 @@
+#root {
+    -fx-border-width:1;-fx-border-color:#4A5459;
+ -fx-border-radius: 5px;
+}
+#top {
+    -fx-background-color: #4A5459;
+}

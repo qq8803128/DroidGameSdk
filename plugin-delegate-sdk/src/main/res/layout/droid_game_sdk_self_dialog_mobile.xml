@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  android:paddingTop="16dp"
+                  android:background="@drawable/droid_game_sdk_self_shape_window_background"
+                  android:layout_height="250dp">
+
+        <TextView android:layout_width="match_parent"
+                  android:text="绑定手机号"
+                  android:textSize="17sp"
+                  android:textColor="#ffffff"
+                  android:gravity="center"
+                  android:paddingLeft="16dp"
+                  android:paddingRight="16dp"
+                  android:textStyle="bold"
+                  android:layout_height="wrap_content"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:textSize="12.5sp"
+                  android:textColor="#afafaf"
+                  android:layout_marginTop="12dp"
+                  android:gravity="center"
+                  android:paddingLeft="16dp"
+                  android:paddingRight="16dp"
+                  android:text="为了提高账号安全性，建议绑定手机号之后可用手机号直接登录游戏，避免账号丢失"
+                  android:layout_height="wrap_content"/>
+
+
+
+        <EditText android:layout_width="match_parent"
+                  android:background="@drawable/droid_game_sdk_self_shape_input_corner"
+                  android:layout_marginTop="12dp"
+                  android:hint="手机号"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:gravity="center_vertical"
+                  android:textSize="14sp"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="10dp"
+                  android:layout_height="36dp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:layout_marginLeft="16dp"
+                      android:layout_marginTop="6dp"
+                      android:layout_marginRight="16dp"
+                      android:background="@drawable/droid_game_sdk_self_shape_input_corner"
+                      android:layout_height="36dp">
+            <EditText android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:hint="验证码"
+                      android:gravity="center_vertical"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:textSize="14sp"
+                      android:background="#00000000"
+                      android:layout_height="36dp"/>
+
+            <TextView android:layout_width="90dp"
+                      android:text="获取验证码"
+                      android:gravity="center"
+                      android:background="@drawable/droid_game_sdk_self_selector_get_code_button"
+                      android:textColor="#ff8200"
+                      android:textSize="12sp"
+                      android:layout_marginRight="4dp"
+                      android:layout_height="28dp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="1"/>
+
+        <View android:layout_width="match_parent"
+              android:background="#95ffffff"
+              android:layout_height="1px"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:layout_height="48dp">
+
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:text="暂不绑定"
+                      android:textSize="17sp"
+                      android:id="@id/droid_game_sdk_self_cancel_bind_mobile"
+                      android:textStyle="bold"
+                      android:textColor="#ffffff"
+                      android:gravity="center"
+                      android:layout_height="match_parent"/>
+
+            <View android:layout_width="1px"
+                  android:background="#95ffffff"
+                  android:layout_height="match_parent"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:id="@id/droid_game_sdk_self_do_bind_mobile"
+                      android:text="立即绑定"
+                      android:textSize="17sp"
+                      android:textStyle="bold"
+                      android:textColor="#ff8200"
+                      android:gravity="center"
+                      android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

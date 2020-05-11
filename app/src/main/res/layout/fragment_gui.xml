@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <ScrollView android:layout_width="match_parent"
+                android:fillViewport="true"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:padding="16dp"
+                      android:layout_height="match_parent">
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/suspen"
+                    android:text="Suspen"/>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/message"
+                    android:text="MessageDialog"/>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/input"
+                    android:text="InputDialog"/>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/loading"
+                    android:text="LoadingTip"/>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/info"
+                    android:text="InfoTip"/>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/error"
+                    android:text="ErrorTip"/>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/success"
+                    android:text="SuccessTip"/>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <Button style="@style/ButtonTheme"
+                    android:id="@+id/text"
+                    android:text="TextTip"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

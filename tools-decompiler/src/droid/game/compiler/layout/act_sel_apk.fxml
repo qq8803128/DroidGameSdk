@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<BorderPane id="root"
+            maxHeight="180.0"
+            maxWidth="250.0"
+            minHeight="180.0"
+            minWidth="250.0"
+            prefHeight="180.0" prefWidth="250.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="droid.game.compiler.ui.SelApkActivity">
+
+    <stylesheets>
+        <URL value="@act_sel_apk.css" />
+    </stylesheets>
+    <top>
+        <fx:include source="include_tool_bar.fxml" onMouseDragged="#onWindowDragged"
+                    onMousePressed="#onWindowPressed"/>
+    </top>
+    <center>
+        <Label fx:id="mDragFile" alignment="CENTER" onDragDropped="#onDragFileDropped" onDragOver="#onDragFileOver" prefHeight="236.0" prefWidth="333.0" text="将需要反编译的APK拖到此处" textAlignment="CENTER" textFill="forestgreen" BorderPane.alignment="CENTER" />
+    </center>
+
+</BorderPane>

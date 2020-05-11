@@ -1,0 +1,93 @@
+apply plugin: 'java-library'
+apply plugin: droid.game.gradle.JarJarPlugin
+
+dependencies {
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+    
+    compileOnly files(AndroidFrameworkJar)
+    
+    classRename 'com.squareup.okhttp3:okhttp:3.12.0'
+    classRename 'com.squareup.okhttp3:logging-interceptor:3.12.0'
+    classRename ('com.squareup.retrofit2:retrofit:2.6.0'){
+        exclude group: 'com.squareup.okhttp3',module:'okhttp'
+    }
+    classRename 'io.reactivex.rxjava2:rxjava:2.2.14'
+    classRename ('com.squareup.retrofit2:adapter-rxjava2:2.6.0'){
+        exclude group: 'io.reactivex.rxjava2',module:'rxjava'
+    }
+
+    classRename ('io.reactivex.rxjava2:rxandroid:2.1.1'){
+        exclude group: 'io.reactivex.rxjava2',module:'rxjava'
+    }
+    classRename('com.squareup.retrofit2:converter-scalars:2.6.0')
+   
+    classRename('com.squareup.retrofit2:converter-scalars:2.6.0')
+    
+    classRename('com.squareup:otto:1.3.8')
+
+    implementation files('libs/otto-1.3.8.jar')
+    
+    implementation files('libs/okio-1.15.0.jar')
+    implementation files('libs/okhttp-3.12.0.jar')
+    implementation files('libs/logging-interceptor-3.12.0.jar')
+    
+    implementation files('libs/retrofit-2.6.0.jar')
+    implementation files('libs/converter-scalars-2.6.0.jar')
+    
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+
+jarJar {
+    def packageName = 'droid.game.open.source'
+    rules = [
+            'otto-1.3.8.jar' : [
+                "rule com.squareup.** ${packageName}.@1"
+            ],
+            'okio-1.15.0.jar' : [
+                    "rule okio.** ${packageName}.okio.@1"
+            ],
+            'okhttp-3.12.0.jar' : [
+                    "rule okio.** ${packageName}.okio.@1",
+                    "rule okhttp3.** ${packageName}.okhttp3.@1"
+            ],
+            'logging-interceptor-3.12.0.jar' : [
+                    "rule okio.** ${packageName}.okio.@1",
+                    "rule okhttp3.** ${packageName}.okhttp3.@1"
+            ],
+            'retrofit-2.6.0.jar' : [
+                    "rule okio.** ${packageName}.okio.@1",
+                    "rule okhttp3.** ${packageName}.okhttp3.@1",
+                    "rule retrofit2.** ${packageName}.retrofit2.@1"
+            ],
+            'converter-scalars-2.6.0.jar':[
+                    "rule okio.** ${packageName}.okio.@1",
+                    "rule okhttp3.** ${packageName}.okhttp3.@1",
+                    "rule retrofit2.** ${packageName}.retrofit2.@1"
+            ],
+            'adapter-rxjava2-2.6.0.jar' : [
+                    "rule org.reactivestreams.** ${packageName}.reactivestreams.@1",
+                    "rule io.reactivex.** ${packageName}.reactivex.@1",
+                    "rule okio.** ${packageName}.okio.@1",
+                    "rule okhttp3.** ${packageName}.okhttp3.@1",
+                    "rule retrofit2.** ${packageName}.retrofit2.@1"
+            ],
+            'reactive-streams-1.0.3.jar' :[
+                    "rule org.reactivestreams.** ${packageName}.reactivestreams.@1"
+            ],
+            'rxjava-2.2.14.jar' : [
+                    "rule org.reactivestreams.** ${packageName}.reactivestreams.@1",
+                    "rule io.reactivex.** ${packageName}.reactivex.@1"
+            ],
+            'rxandroid-2.1.1.jar': [
+                    "rule org.reactivestreams.** ${packageName}.reactivestreams.@1",
+                    "rule io.reactivex.** ${packageName}.reactivex.@1"
+            ]
+    ]
+}

@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly files(AndroidFrameworkJar)
+
+    compileOnly project(':support-open-source')
+    compileOnly project(':support-common')
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

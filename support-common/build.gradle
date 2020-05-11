@@ -1,0 +1,28 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly files(AndroidFrameworkJar)
+
+    api files('../support-open-source/libs/okhttp-3.12.0.jar')
+    api files('../support-open-source/libs/logging-interceptor-3.12.0.jar')
+    api files('../support-open-source/libs/okio-1.15.0.jar')
+    api files('../support-open-source/libs/retrofit-2.6.0.jar')
+    api files('../support-open-source/libs/converter-scalars-2.6.0.jar')
+    api files('../support-open-source/libs/otto-1.3.8.jar')
+    
+    compileOnly files('../support-open-source/libs/adapter-rxjava2-2.6.0.jar')
+    compileOnly files('../support-open-source/libs/reactive-streams-1.0.3.jar')
+    compileOnly files('../support-open-source/libs/rxandroid-2.1.1.jar')
+    compileOnly files('../support-open-source/libs/rxjava-2.2.14.jar')
+    
+    api project(':support-open-source')
+    api project(':support-annotation')
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

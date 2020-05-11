@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <include layout="@layout/include_page_init" android:id="@+id/initPage" android:visibility="visible"/>
+
+    <include layout="@layout/include_page_login" android:id="@+id/loginPage" android:visibility="gone"/>
+
+    <include layout="@layout/include_page_role" android:id="@+id/rolePage" android:visibility="gone"/>
+
+    <include layout="@layout/include_page_game" android:id="@+id/gamePage" android:visibility="gone"/>
+
+    <include layout="@layout/include_page_video" android:id="@+id/videoPage" android:visibility="gone"/>
+
+    <include layout="@layout/include_page_pay" android:id="@+id/payPage" android:visibility="gone"/>
+
+</RelativeLayout>

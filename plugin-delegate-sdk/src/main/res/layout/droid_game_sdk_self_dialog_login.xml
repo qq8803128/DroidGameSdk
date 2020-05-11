@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="wrap_content">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="16dp"
+            android:visibility="gone"
+            android:paddingRight="16dp"
+            android:id="@id/droid_game_sdk_self_dialog_login_page"
+            android:layout_height="250dp"
+            android:background="@drawable/droid_game_sdk_self_shape_window_background">
+
+        <include
+                android:visibility="gone"
+                layout="@layout/droid_game_sdk_self_dialog_login_include_login_select"/>
+
+        <include
+                android:visibility="gone"
+                layout="@layout/droid_game_sdk_self_dialog_login_include_login_name"/>
+
+        <include android:visibility="gone"
+                 layout="@layout/droid_game_sdk_self_dialog_login_include_login_mobile"/>
+
+        <include
+                android:visibility="gone"
+                layout="@layout/droid_game_sdk_self_dialog_login_include_register_mobile"/>
+
+        <include android:visibility="gone"
+                 layout="@layout/droid_game_sdk_self_dialog_login_include_register_name"/>
+
+        <include android:visibility="gone"
+                 layout="@layout/droid_game_sdk_self_dialog_login_include_miss_password"/>
+    </FrameLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:gravity="center"
+                  android:id="@id/droid_game_sdk_self_dialog_loading_page"
+                  android:layout_height="250dp">
+
+
+        <LinearLayout android:layout_width="108dp"
+                      android:gravity="center"
+                      android:orientation="vertical"
+                      android:paddingTop="10dp"
+                      android:paddingBottom="10dp"
+                      android:background="@drawable/droid_game_sdk_self_shape_window_background"
+                      android:layout_height="wrap_content">
+
+            <droid.game.common.widget.LoadingView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:textSize="13.5sp"
+                      android:textColor="#ffffff"
+                      android:text="加载中"
+                      android:layout_marginTop="3dp"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

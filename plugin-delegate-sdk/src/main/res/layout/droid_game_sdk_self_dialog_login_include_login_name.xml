@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="250dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp">
+
+        <ImageView android:layout_width="48dp"
+                   android:paddingTop="4dp"
+                   android:paddingBottom="4dp"
+                   android:paddingRight="8dp"
+                   android:src="@mipmap/droid_game_sdk_self_ic_sdk_logo"
+                   android:layout_height="48dp"/>
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="指尖游戏"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:id="@id/droid_game_sdk_self_open_miss_password"
+                android:textSize="12sp"
+                android:text="忘记密码？"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_marginTop="4dp"
+                  android:background="@drawable/droid_game_sdk_self_shape_input_top"
+                  android:layout_height="36dp">
+
+        <ImageView android:layout_width="36dp"
+                   android:src="@mipmap/droid_game_sdk_self_ic_edit_account"
+                   android:padding="10dp"
+                   android:layout_height="36dp"/>
+
+        <EditText android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:background="#00000000"
+                  android:paddingRight="10dp"
+                  android:id="@+id/droid_game_sdk_self_edit_name_login_account"
+                  android:textColorHint="#afafaf"
+                  android:hint="指尖账号/手机号"
+                  android:textSize="13sp"
+                  android:maxLines="1"
+                  android:gravity="center_vertical"
+                  android:layout_height="match_parent"/>
+
+        <ImageView android:layout_width="36dp"
+                   android:src="@mipmap/droid_game_sdk_self_ic_edit_down"
+                   android:padding="10dp"
+                   android:visibility="gone"
+                   android:layout_height="36dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_marginTop="1dp"
+                  android:background="@drawable/droid_game_sdk_self_shape_input_bottomn"
+                  android:layout_height="36dp">
+
+        <ImageView android:layout_width="36dp"
+                   android:src="@mipmap/droid_game_sdk_self_ic_edit_password"
+                   android:padding="10dp"
+                   android:layout_height="36dp"/>
+
+        <EditText android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:background="#00000000"
+                  android:maxLines="1"
+                  android:hint="密码"
+                  android:id="@+id/droid_game_sdk_self_edit_name_login_password"
+                  android:textColorHint="#afafaf"
+                  android:gravity="center_vertical"
+                  android:textSize="13sp"
+                  android:paddingRight="10dp"
+                  android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent"
+              android:layout_marginTop="12dp"
+              android:textColor="#ffffff"
+              android:gravity="center"
+              android:id="@id/droid_game_sdk_self_do_name_login"
+              android:textSize="13sp"
+              android:background="@drawable/droid_game_sdk_self_selector_major_button_background"
+              android:text="进入游戏"
+              android:layout_height="36dp"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:gravity="center"
+                  android:layout_height="80dp">
+
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:id="@id/droid_game_sdk_self_open_quick_login_page"
+                      android:orientation="vertical"
+                      android:gravity="center"
+                      android:layout_height="match_parent">
+
+            <ImageView android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:src="@mipmap/droid_game_sdk_self_ic_quick_register"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:singleLine="true"
+                      android:textSize="9sp"
+                      android:textColor="#f1f2f3"
+                      android:paddingTop="4dp"
+                      android:text="快速注册"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:orientation="vertical"
+                      android:id="@id/droid_game_sdk_self_open_mobile_login_page"
+                      android:gravity="center"
+                      android:layout_height="match_parent">
+
+            <ImageView android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:src="@mipmap/droid_game_sdk_self_ic_mobile_register"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:singleLine="true"
+                      android:textSize="9sp"
+                      android:textColor="#f1f2f3"
+                      android:paddingTop="4dp"
+                      android:text="手机登录"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:id="@id/droid_game_sdk_self_open_mobile_register_page"
+                      android:orientation="vertical"
+                      android:gravity="center"
+                      android:layout_height="match_parent">
+
+            <ImageView android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:src="@mipmap/droid_game_sdk_self_ic_account_register"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:singleLine="true"
+                      android:textSize="9sp"
+                      android:textColor="#f1f2f3"
+                      android:paddingTop="4dp"
+                      android:text="账号注册"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

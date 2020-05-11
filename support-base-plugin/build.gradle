@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+
+
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        applicationId 'droid.game.plugin'
+        flavorDimensions 'droid'
+    }
+
+    signingConfigs {
+        debug {
+            v2SigningEnabled false
+            keyAlias 'game91'
+            keyPassword 'game91'
+            storeFile file(jksFile)
+            storePassword 'game91'
+        }
+        release {
+            v2SigningEnabled false
+            keyAlias 'game91'
+            keyPassword 'game91'
+            storeFile file(jksFile)
+            storePassword 'game91'
+        }
+    }
+
+    productFlavors{
+        rxjava{
+            versionCode 1
+            versionName "1.0"
+            applicationId 'droid.game.plugin.rxjava2'
+            manifestPlaceholders = [
+                    'applicationName' : '观察者基础库'
+            ]
+        }
+        widget{
+            versionCode 1
+            versionName "1.0"
+            applicationId 'droid.game.plugin.widget'
+            manifestPlaceholders = [
+                    'applicationName' : '控件基础库'
+            ]
+        }
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //在这里修改apk文件名
+                variant.getPackageApplication().outputDirectory = project.parent.file("app/src/main/assets/android.gamecenter.system/internal_plugins/")
+                outputFileName = "${variant.productFlavors[0].name.toString()}.apk"
+            }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    rxjavaImplementation files('../support-open-source/libs/adapter-rxjava2-2.6.0.jar')
+    rxjavaImplementation files('../support-open-source/libs/reactive-streams-1.0.3.jar')
+    rxjavaImplementation files('../support-open-source/libs/rxjava-2.2.14.jar')
+    rxjavaImplementation files('../support-open-source/libs/rxandroid-2.1.1.jar')
+    
+    widgetImplementation project(':support-android-support')
+}

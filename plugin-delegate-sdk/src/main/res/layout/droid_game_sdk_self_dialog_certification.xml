@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  android:id="@id/droid_game_sdk_self_certification_page"
+                  android:layout_height="250dp">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:paddingTop="16dp"
+                      android:background="@drawable/droid_game_sdk_self_shape_window_background"
+                      android:layout_height="match_parent">
+
+            <TextView android:layout_width="match_parent"
+                      android:text="网络游戏用户实名登记通知"
+                      android:textSize="17sp"
+                      android:textColor="#ffffff"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      android:textStyle="bold"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="match_parent"
+                      android:textSize="13sp"
+                      android:textColor="#afafaf"
+                      android:layout_marginTop="2dp"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      android:text="为了加强未成年人保护，落实国家关于防沉迷政策要求，游戏用户需要实名认证"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="match_parent"
+                      android:textColor="#ff8200"
+                      android:layout_marginTop="2dp"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      android:text="注：未成年人游戏时长以及付费将受限"
+                      android:layout_height="wrap_content"/>
+
+            <EditText android:layout_width="match_parent"
+                      android:background="@drawable/droid_game_sdk_self_shape_input_corner"
+                      android:layout_marginTop="6dp"
+                      android:hint="请输入真实姓名"
+                      android:layout_marginLeft="16dp"
+                      android:layout_marginRight="16dp"
+                      android:gravity="center_vertical"
+                      android:textSize="14sp"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:layout_height="36dp"/>
+
+            <EditText android:layout_width="match_parent"
+                      android:background="@drawable/droid_game_sdk_self_shape_input_corner"
+                      android:layout_marginTop="6dp"
+                      android:hint="身份证"
+                      android:gravity="center_vertical"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:layout_marginLeft="16dp"
+                      android:textSize="14sp"
+                      android:layout_marginRight="16dp"
+                      android:layout_height="36dp"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"/>
+
+            <View android:layout_width="match_parent"
+                  android:background="#95ffffff"
+                  android:layout_height="1px"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="48dp">
+
+                <TextView android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:text="暂不认证"
+                          android:textSize="17sp"
+                          android:id="@id/droid_game_sdk_self_skip_certification"
+                          android:textStyle="bold"
+                          android:textColor="#ffffff"
+                          android:gravity="center"
+                          android:layout_height="match_parent"/>
+
+                <View android:layout_width="1px"
+                      android:background="#95ffffff"
+                      android:layout_height="match_parent"/>
+
+                <TextView android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:id="@id/droid_game_sdk_self_do_certification"
+                          android:text="立即认证"
+                          android:textSize="17sp"
+                          android:textStyle="bold"
+                          android:textColor="#ff8200"
+                          android:gravity="center"
+                          android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:gravity="center"
+                      android:visibility="gone"
+                      android:layout_height="match_parent">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:background="@drawable/droid_game_sdk_self_shape_window_background"
+                          android:paddingTop="16dp"
+                          android:orientation="vertical"
+                          android:layout_height="wrap_content">
+
+                <TextView android:layout_width="match_parent"
+                          android:text="试玩模式说明"
+                          android:textSize="17sp"
+                          android:textColor="#ffffff"
+                          android:paddingLeft="16dp"
+                          android:gravity="center"
+                          android:paddingRight="16dp"
+                          android:textStyle="bold"
+                          android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="match_parent"
+                          android:textSize="14sp"
+                          android:textColor="#afafaf"
+                          android:layout_marginTop="12dp"
+                          android:paddingLeft="16dp"
+                          android:gravity="center"
+                          android:paddingRight="16dp"
+                          android:text="根据国家规定，未实名用户只能试玩一小时，期间不能付费"
+                          android:layout_height="wrap_content"/>
+
+                <View android:layout_width="match_parent"
+                      android:background="#95ffffff"
+                      android:layout_marginTop="16dp"
+                      android:layout_height="1px"/>
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_height="56dp">
+
+                    <TextView android:layout_width="0dp"
+                              android:layout_weight="1"
+                              android:text="暂不认证"
+                              android:textSize="17sp"
+                              android:textStyle="bold"
+                              android:textColor="#ffffff"
+                              android:id="@id/droid_game_sdk_self_cancel_certification"
+                              android:gravity="center"
+                              android:layout_height="match_parent"/>
+
+                    <View android:layout_width="1px"
+                          android:background="#95ffffff"
+                          android:layout_height="match_parent"/>
+
+                    <TextView android:layout_width="0dp"
+                              android:layout_weight="1"
+                              android:text="立即认证"
+                              android:textSize="17sp"
+                              android:textStyle="bold"
+                              android:id="@+id/droid_game_sdk_self_open_certification_page"
+                              android:textColor="#ff8200"
+                              android:gravity="center"
+                              android:layout_height="match_parent"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

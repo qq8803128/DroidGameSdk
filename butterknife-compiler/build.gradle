@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.squareup:javapoet:1.10.0'
+    implementation 'com.google.auto.service:auto-service:1.0-rc4'
+    implementation 'com.google.auto:auto-common:0.10'
+    implementation 'com.google.guava:guava:24.0-jre'
+    implementation project(':support-butterknife')
+    implementation files(org.gradle.internal.jvm.Jvm.current().getToolsJar())
+    implementation files(AndroidFrameworkJar)
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

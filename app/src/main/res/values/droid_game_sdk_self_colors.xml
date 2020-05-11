@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="droid_game_sdk_self_major_background_color">#ffffff</color>
+    <color name="droid_game_sdk_self_major_background_stroke_color">#25000000</color>
+
+    <color name="droid_game_sdk_self_major_button_background_normal">#2887fa</color>
+    <color name="droid_game_sdk_self_major_button_background_pressed">#0078d7</color>
+    <color name="droid_game_sdk_self_major_button_background_disable">#999999</color>
+
+    <color name="droid_game_sdk_self_major_button_text_color_normal">#ffffff</color>
+    <color name="droid_game_sdk_self_major_button_text_color_pressed">#ffffff</color>
+    <color name="droid_game_sdk_self_major_button_text_color_disable">#ffffff</color>
+
+
+    <color name="droid_game_sdk_self_assist_button_background_normal">#ff8200</color>
+    <color name="droid_game_sdk_self_assist_button_background_pressed">#e47502</color>
+    <color name="droid_game_sdk_self_assist_button_background_disable">#999999</color>
+
+    <color name="droid_game_sdk_self_assist_button_text_color_normal">#ffffff</color>
+    <color name="droid_game_sdk_self_assist_button_text_color_pressed">#ffffff</color>
+    <color name="droid_game_sdk_self_assist_button_text_color_disable">#ffffff</color>
+
+    <color name="droid_game_sdk_self_title_bar_text">#333333</color>
+
+    <color name="droid_game_sdk_self_top_divider">#2887fa</color>
+
+</resources>

@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+/*
+apply plugin: 'com.mob.sdk'
+
+MobSDK {
+    appKey "123456789"
+    appSecret "123456789"
+    SecVerify {}
+}
+*/
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "cn.droid.game.demo"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/proguard/okhttp3.pro'
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    //implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation project(':support-common')
+    implementation project(':support-instant-run')
+    implementation project(':support-core')
+    implementation project(':support-core-bridge')
+    implementation project(':support-butterknife')
+    implementation project(':support-android-oaid')
+    implementation project(':support-permission')
+    implementation project(':xsdk-inner')
+    //debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:3.0.0'
+    //debugImplementation 'com.didichuxing.doraemonkit:doraemonkit-leakcanary:3.0.0'
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:3.0.0'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:3.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:27.1.1'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:27.1.1'
+
+    implementation 'com.mob.sdk:MobSDK:+'
+
+}
