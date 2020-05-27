@@ -5,7 +5,6 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.RectF;
@@ -306,11 +305,20 @@ public class FtWindowManager {
             FtMenuItem menuItem = new FtMenuItem(context);
             container.addView(menuItem, dp(size), dp(size));
             applyMenuClickDrawable(menuItem);
-            menuItem.setMenuItem(menus.get(i).mText,menus.get(i).mDrawable);
+            menuItem.setMenuItem(
+                    menus.get(i).mText,
+                    menus.get(i).mDrawable,
+                    menus.get(i).mTextSize,
+                    menus.get(i).mIconSize
+            );
+            final int index = i;
             menuItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     hideMenu(linearLayout, isRightLayout);
+                    if (menus.get(index).mListener != null){
+                        menus.get(index).mListener.onClick(v);
+                    }
                 }
             });
         }
@@ -456,6 +464,8 @@ public class FtWindowManager {
         Drawable mDrawable;
         String mText;
         View.OnClickListener mListener;
+        private int mIconSize = 18;
+        private int mTextSize = 12;
 
         public MenuItem() {
 
@@ -469,6 +479,16 @@ public class FtWindowManager {
 
         public MenuItem setText(String text) {
             mText = text;
+            return this;
+        }
+
+        public MenuItem setIconSize(int iconSize){
+            mIconSize = iconSize;
+            return this;
+        }
+
+        public MenuItem setTextSize(int textSize){
+            mTextSize = textSize;
             return this;
         }
 

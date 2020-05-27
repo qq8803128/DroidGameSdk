@@ -26,19 +26,19 @@ public class FtMenuItem extends LinearLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    public void setMenuItem(String text, Drawable drawable) {
+    public void setMenuItem(String text, Drawable drawable,int textSize,int iconSize) {
         setGravity(Gravity.CENTER);
         setOrientation(VERTICAL);
 
         Context ctx = getContext();
         ImageView imageView = new ImageView(ctx);
-        addView(imageView,dp(15),dp(15));
+        addView(imageView,dp(iconSize),dp(iconSize));
         imageView.setImageDrawable(drawable);
 
         TextView textView = new TextView(ctx);
         textView.setGravity(Gravity.CENTER);
         textView.setTextColor(0xffffffff);
-        textView.setTextSize(7f);
+        textView.setTextSize(textSize);
         textView.setMaxLines(1);
         textView.setPadding(dp(2),dp(2),dp(2),0);
         textView.setText(text);

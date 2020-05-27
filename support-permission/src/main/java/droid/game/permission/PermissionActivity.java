@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PermissionActivity extends Activity {
+public class PermissionActivity extends Activity implements EasyPermissions.PermissionCallbacks{
     private static PermissionInfo sPermissionInfo;
     private static final String KEY_TYPE = "KEY_TYPE";
     private static final String KEY_PERMISSIONS = "KEY_PERMISSIONS";
@@ -32,13 +32,15 @@ public class PermissionActivity extends Activity {
     public static void requestPermission(Activity activity,  String[] permissions) {
         initPermissionInfoJson(activity);
         if (sPermissionInfo.isAutoRequestPermission()) {
-            ArrayList<String> dangerousPermissions = (ArrayList<String>) Arrays.asList(permissions);
+            List<String> dangerousPermissions =  new ArrayList();
+            dangerousPermissions.addAll(Arrays.asList(permissions));
+
             if (permissions == null || permissions.length == 0) {
-                dangerousPermissions = (ArrayList<String>) PermissionScaner.sacnPermissions(activity, sPermissionInfo.getRemovePermissions());
+                dangerousPermissions = PermissionScaner.sacnPermissions(activity, sPermissionInfo.getRemovePermissions());
             }
             if (dangerousPermissions != null || dangerousPermissions.size() >= 0){
                 Intent intent = new Intent(activity,PermissionActivity.class);
-                intent.putStringArrayListExtra(KEY_PERMISSIONS,dangerousPermissions);
+                intent.putStringArrayListExtra(KEY_PERMISSIONS, (ArrayList<String>) dangerousPermissions);
                 intent.putExtra(KEY_TYPE,TYPE_PERMISSION);
 
                 activity.startActivity(intent);
@@ -78,8 +80,14 @@ public class PermissionActivity extends Activity {
 
         switch (operation) {
             case TYPE_PERMISSION: {
-                String[] permissions = intent.getStringArrayExtra(KEY_PERMISSIONS);
-                requestPermissions(permissions, TYPE_PERMISSION);
+                List<String> permissions = intent.getStringArrayListExtra(KEY_PERMISSIONS);
+                String[] array = new String[permissions.size()];
+                permissions.toArray(array);
+                if (EasyPermissions.hasPermissions(this,array)){
+                    onPermissionsGranted(TYPE_PERMISSION,permissions);
+                    break;
+                }
+                EasyPermissions.requestPermissions(this,"请给予APP运行必要的权限",TYPE_PERMISSION,array);
                 break;
             }
             case TYPE_INSTALL: {
@@ -89,6 +97,20 @@ public class PermissionActivity extends Activity {
                 break;
             }
         }
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        finish();
+        BusProvider.get().post(new PermissionBirdge.Result(PermissionBirdge.Result.RUNTIME,true));
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        List<String> permissions = getIntent().getStringArrayListExtra(KEY_PERMISSIONS);
+        String[] array = new String[permissions.size()];
+        permissions.toArray(array);
+        EasyPermissions.requestPermissions(this,"请给予APP运行必要的权限",TYPE_PERMISSION,array);
     }
 
     @Override
@@ -106,7 +128,7 @@ public class PermissionActivity extends Activity {
     public void onBackPressed() {
     }
 
-    private static class PermissionInfo extends Json {
+    public static class PermissionInfo extends Json {
         public String getUserProtocolUrl(){
             return get("","user-protocol");
         }

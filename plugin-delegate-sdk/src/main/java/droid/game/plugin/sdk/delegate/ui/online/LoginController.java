@@ -17,10 +17,7 @@ import droid.game.core.parameter.Parameter;
 import droid.game.core.result.Result;
 import droid.game.plugin.sdk.delegate.Constants;
 import droid.game.plugin.sdk.delegate.R3;
-import droid.game.plugin.sdk.delegate.ui.online.dialog.CertificationDialog;
-import droid.game.plugin.sdk.delegate.ui.online.dialog.LoginDialog;
-import droid.game.plugin.sdk.delegate.ui.online.dialog.MobileDialog;
-import droid.game.plugin.sdk.delegate.ui.online.dialog.PaymentDialog;
+import droid.game.plugin.sdk.delegate.ui.online.dialog.*;
 
 public class LoginController {
     private FtWindowManager mFtWindowManager;
@@ -105,7 +102,7 @@ public class LoginController {
 
     }
 
-    public void showFloater(Activity activity){
+    public void showFloater(final Activity activity){
         if (mFtWindowManager == null){
             mFtWindowManager = new FtWindowManager.Builder()
                     .addMenu(
@@ -115,7 +112,8 @@ public class LoginController {
                             .setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-
+                                    new UserDialog(activity)
+                                            .show();
                                 }
                             })
                     )
@@ -126,7 +124,8 @@ public class LoginController {
                             .setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-
+                                    new UserDialog(activity)
+                                            .show();
                                 }
                             })
                     )
@@ -141,6 +140,7 @@ public class LoginController {
                                 }
                             })
                     )
+                    .setSize(48)
                     .create(activity);
             mFtImageView = new FtImageView(activity);
         }

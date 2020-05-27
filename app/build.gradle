@@ -4,15 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-/*
-apply plugin: 'com.mob.sdk'
 
-MobSDK {
-    appKey "123456789"
-    appSecret "123456789"
-    SecVerify {}
-}
-*/
 
 android {
     compileSdkVersion 29

@@ -53,9 +53,9 @@ public class PermissionBirdge implements IPermission {
         if (result != null) {
             switch (result.mType) {
                 case Result.INSTALL:
-                    mRuntime.accept(result.isSuccess());
                     break;
                 case Result.RUNTIME:
+                    mRuntime.accept(result.isSuccess());
                     break;
             }
         }
