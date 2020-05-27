@@ -13,6 +13,7 @@ import droid.game.plugin.sdk.delegate.ui.online.LoginController;
  * 网游sdk
  */
 public class OnLineSdk implements IChannel {
+    private LoginController mLoginController;
     @Override
     public void init(Activity activity, Parameter parameter, Consumer<Result> success, Consumer<Result> failed) {
         success.accept(new Result.Init(true,parameter,parameter,""));
@@ -20,12 +21,18 @@ public class OnLineSdk implements IChannel {
 
     @Override
     public void login(Activity activity, Parameter parameter, Consumer<Result> success, Consumer<Result> failed) {
-        new LoginController().login(activity,parameter,success,failed);
+        if (mLoginController == null){
+            mLoginController = new LoginController();
+        }
+        mLoginController.login(activity,parameter,success,failed);
     }
 
     @Override
     public void logout(Activity activity, Parameter parameter, Consumer<Result> success, Consumer<Result> failed) {
-
+        if (mLoginController == null){
+            mLoginController = new LoginController();
+        }
+        mLoginController.logout(activity,parameter,success,failed);
     }
 
     @Override

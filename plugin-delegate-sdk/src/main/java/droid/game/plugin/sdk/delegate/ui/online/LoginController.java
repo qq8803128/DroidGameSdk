@@ -2,18 +2,32 @@ package droid.game.plugin.sdk.delegate.ui.online;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import droid.game.android.floater.window.FtImageView;
+import droid.game.android.floater.window.FtWindowManager;
+import droid.game.butterknife.ButterKnife;
+import droid.game.butterknife.Unbinder;
 import droid.game.common.keep.Action;
 import droid.game.common.keep.Consumer;
+import droid.game.common.util.UIResourcesHelper;
 import droid.game.core.parameter.Parameter;
 import droid.game.core.result.Result;
+import droid.game.plugin.sdk.delegate.Constants;
+import droid.game.plugin.sdk.delegate.R3;
 import droid.game.plugin.sdk.delegate.ui.online.dialog.CertificationDialog;
 import droid.game.plugin.sdk.delegate.ui.online.dialog.LoginDialog;
 import droid.game.plugin.sdk.delegate.ui.online.dialog.MobileDialog;
 import droid.game.plugin.sdk.delegate.ui.online.dialog.PaymentDialog;
 
 public class LoginController {
+    private FtWindowManager mFtWindowManager;
+    private FtImageView mFtImageView;
+
     public void login(final Activity activity, final Parameter parameter, final Consumer<Result> success, final Consumer<Result> failed) {
+
         showLoading(activity);
         requestQuickLogin(new Action(){
             @Override
@@ -22,6 +36,9 @@ public class LoginController {
                 doLogin(activity,parameter,success,failed);
             }
         });
+    }
+
+    public void logout(Activity activity, Parameter parameter, Consumer<Result> success, Consumer<Result> failed) {
     }
 
     private boolean isFirstLogin() {
@@ -74,6 +91,7 @@ public class LoginController {
                     @Override
                     public void onDismiss(DialogInterface dialog) {
                         new PaymentDialog(activity).show();
+                        showFloater(activity);
                     }
                 })
                 .show();
@@ -86,4 +104,64 @@ public class LoginController {
     private void hideLoading() {
 
     }
+
+    public void showFloater(Activity activity){
+        if (mFtWindowManager == null){
+            mFtWindowManager = new FtWindowManager.Builder()
+                    .addMenu(
+                            new FtWindowManager.MenuItem()
+                            .setDrawable(getDrawable(R3.mipmap.droid_game_sdk_self_ic_floater_window_manager_home))
+                            .setText("主页")
+                            .setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            })
+                    )
+                    .addMenu(
+                            new FtWindowManager.MenuItem()
+                            .setDrawable(getDrawable(R3.mipmap.droid_game_sdk_self_ic_floater_window_manager_gift))
+                            .setText("礼包")
+                            .setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            })
+                    )
+                    .addMenu(
+                            new FtWindowManager.MenuItem()
+                            .setDrawable(getDrawable(R3.mipmap.droid_game_sdk_self_ic_floater_window_manager_client))
+                            .setText("客服")
+                            .setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            })
+                    )
+                    .create(activity);
+            mFtImageView = new FtImageView(activity);
+        }
+
+        mFtWindowManager.addView(mFtImageView);
+    }
+
+    public void hideFloater(Activity activity){
+        try {
+            mFtWindowManager.removeView(mFtImageView);
+        }catch (Throwable e){
+            e.printStackTrace();
+        }
+    }
+
+    public Drawable getDrawable(String id){
+        return UIResourcesHelper.getDrawable(getPluginContext(),id);
+    }
+
+    public Context getPluginContext() {
+        return Constants.getSelfContext();
+    }
+
 }

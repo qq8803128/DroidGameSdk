@@ -43,6 +43,8 @@ public class PermissionActivity extends Activity {
 
                 activity.startActivity(intent);
                 return;
+            }else{
+                BusProvider.get().post(new PermissionBirdge.Result(PermissionBirdge.Result.RUNTIME,true));
             }
         }
 

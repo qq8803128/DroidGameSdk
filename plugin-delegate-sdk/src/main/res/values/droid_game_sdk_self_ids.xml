@@ -16,6 +16,7 @@
     <item name="droid_game_sdk_self_register_mobile_user_protocol" type="id"/>
     <item name="droid_game_sdk_self_dialog_loading_page" type="id"/>
     <item name="droid_game_sdk_self_do_name_login" type="id"/>
+
     <item name="droid_game_sdk_self_edit_name_login_account" type="id"/>
     <item name="droid_game_sdk_self_edit_name_login_password" type="id"/>
     <item name="droid_game_sdk_self_edit_name_register_account" type="id"/>
@@ -45,4 +46,6 @@
     <item name="droid_game_sdk_self_dialog_payment_swicth_pay_way" type="id"/>
     <item name="droid_game_sdk_self_dialog_payment_back_to_pay_page" type="id"/>
     <item name="droid_game_sdk_self_dialog_payment_cancel" type="id"/>
+
+    <item name="droid_game_sdk_self_dialog_payment_payway_list" type="id"/>
 </resources>

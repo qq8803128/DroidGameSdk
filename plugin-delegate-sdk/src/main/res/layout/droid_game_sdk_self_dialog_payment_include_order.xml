@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:visibility="visible"
+                  android:layout_height="260dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp">
+
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:paddingLeft="48dp"
+                      android:text="充值中心"
+                      android:textSize="17sp"
+                      android:textColor="#000000"
+                      android:gravity="center"
+                      android:textStyle="bold"
+                      android:layout_height="match_parent"/>
+
+            <ImageView android:layout_width="48dp"
+                       android:padding="10dp"
+                       android:id="@+id/droid_game_sdk_self_dialog_payment_cancel"
+                       android:src="@mipmap/droid_game_sdk_self_ic_close_payment"
+                       android:layout_height="48dp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1px" android:background="#95999999"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="match_parent">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:background="#ffffff"
+                          android:layout_height="wrap_content" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:paddingLeft="16dp"
+                              android:paddingRight="16dp"
+                              android:gravity="center_vertical"
+                              android:layout_height="36dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:textSize="14sp"
+                              android:textColor="#555555"
+                              android:text="游戏名称:"
+                              android:layout_height="wrap_content"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:textSize="14sp"
+                              android:textColor="#000000"
+                              android:gravity="right"
+                              android:paddingLeft="10dp"
+                              android:singleLine="true"
+                              android:id="@+id/droid_game_sdk_self_dialog_payment_game_name"
+                              android:ellipsize="end"
+                              android:text="部落冲突:皇室战争"
+                              android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+                <View android:layout_width="match_parent" android:layout_marginLeft="16dp"
+                      android:layout_height="1px" android:background="#95999999"/>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:paddingLeft="16dp"
+                              android:paddingRight="16dp"
+                              android:gravity="center_vertical"
+                              android:layout_height="36dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:textSize="14sp"
+                              android:textColor="#555555"
+                              android:text="商品名称:"
+                              android:layout_height="wrap_content"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:textSize="14sp"
+                              android:textColor="#000000"
+                              android:gravity="right"
+                              android:paddingLeft="10dp"
+                              android:id="@+id/droid_game_sdk_self_dialog_payment_product_name"
+                              android:singleLine="true"
+                              android:ellipsize="end"
+                              android:text="首冲优惠大礼包"
+                              android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+                <View android:layout_width="match_parent" android:layout_marginLeft="16dp"
+                      android:layout_height="1px" android:background="#95999999"/>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:paddingLeft="16dp"
+                              android:paddingRight="16dp"
+                              android:gravity="center_vertical"
+                              android:layout_height="36dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:textSize="14sp"
+                              android:textColor="#555555"
+                              android:text="商品价格:"
+                              android:layout_height="wrap_content"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:textSize="14sp"
+                              android:textColor="#ff0000"
+                              android:gravity="right"
+                              android:paddingLeft="10dp"
+                              android:id="@+id/droid_game_sdk_self_dialog_payment_pay_price"
+                              android:singleLine="true"
+                              android:ellipsize="end"
+                              android:text="￥648"
+                              android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_marginLeft="16dp"
+                      android:layout_height="1px" android:background="#95999999"/>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:paddingLeft="16dp"
+                              android:paddingRight="0dp"
+                              android:id="@+id/droid_game_sdk_self_dialog_payment_swicth_pay_way"
+                              android:gravity="center_vertical"
+                              android:layout_height="36dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:textSize="14sp"
+                              android:textColor="#555555"
+                              android:text="支付方式:"
+                              android:layout_height="wrap_content"/>
+
+                    <TextView android:layout_width="0dp"
+                              android:layout_weight="1"
+                              android:textSize="14sp"
+                              android:textColor="#20C001"
+                              android:gravity="right"
+                              android:paddingLeft="10dp"
+                              android:id="@+id/droid_game_sdk_self_dialog_payment_payway_name"
+                              android:singleLine="true"
+                              android:ellipsize="end"
+                              android:text="支付宝"
+                              android:layout_height="wrap_content"/>
+
+                    <ImageView android:layout_width="36dp"
+                               android:src="@mipmap/droid_game_sdk_self_ic_edit_down"
+                               android:rotation="270"
+                               android:padding="10dp"
+                               android:layout_height="36dp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1px"
+                      android:background="#95999999"/>
+
+
+            </LinearLayout>
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginLeft="16dp"
+                      android:background="@drawable/droid_game_sdk_self_selector_payment_button_background"
+                      android:textColor="#ffffff"
+                      android:textSize="15sp"
+                      android:text="立即支付"
+                      android:gravity="center"
+                      android:textStyle="bold"
+                      android:layout_marginRight="16dp"
+                      android:layout_height="36dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -8,6 +8,7 @@ import droid.game.core.bridge.bridge.Attribute;
 import droid.game.core.keep.IChannel;
 import droid.game.core.parameter.Parameter;
 import droid.game.core.result.Result;
+import droid.game.plugin.sdk.delegate.db.LiteOrmImpl;
 import droid.game.plugin.sdk.delegate.sdk.OffLineSdk;
 import droid.game.plugin.sdk.delegate.sdk.OnLineSdk;
 
@@ -17,6 +18,7 @@ public class DelegateSdk implements IChannel {
 
     @Override
     public void init(Activity activity, Parameter parameter, Consumer<Result> success, Consumer<Result> failed) {
+        LiteOrmImpl.getInstance().init(activity);
         getSdk().init(activity,parameter,success,failed);
     }
 

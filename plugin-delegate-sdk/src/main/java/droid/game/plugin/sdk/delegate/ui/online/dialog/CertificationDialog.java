@@ -6,11 +6,10 @@ import android.view.ViewGroup;
 import droid.game.butterknife.annotation.BindView;
 import droid.game.butterknife.annotation.OnClick;
 import droid.game.plugin.sdk.delegate.R3;
-import droid.game.plugin.sdk.delegate.ui.online.BaseUi;
 import droid.game.x2c.annotation.Xml;
 
 @Xml(layouts = {"droid_game_sdk_self_dialog_certification"})
-public class CertificationDialog extends BaseUi<CertificationDialog> {
+public class CertificationDialog extends Dialog<CertificationDialog> {
     @BindView(R3.id.droid_game_sdk_self_certification_page)
     ViewGroup mPager;
 

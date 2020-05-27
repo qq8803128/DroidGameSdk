@@ -1,31 +1,42 @@
 package droid.game.plugin.sdk.delegate.ui.online.dialog;
 
 import android.content.Context;
-import android.view.View;
+import android.text.TextUtils;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import droid.game.butterknife.annotation.BindView;
 import droid.game.butterknife.annotation.OnClick;
 import droid.game.common.dialog.UIDialog;
+import droid.game.common.dialog.widget.UIDialogRootLayout;
+import droid.game.common.keep.Consumer;
 import droid.game.plugin.sdk.delegate.R3;
-import droid.game.plugin.sdk.delegate.ui.online.BaseUi;
+import droid.game.plugin.sdk.delegate.ui.online.page.Page;
+import droid.game.plugin.sdk.delegate.ui.online.page.payment.Order;
+import droid.game.plugin.sdk.delegate.ui.online.page.payment.PayWay;
+import droid.game.plugin.sdk.delegate.util.AnimationHelper;
 import droid.game.x2c.annotation.Xml;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Xml(layouts = {"droid_game_sdk_self_dialog_payment"})
-public class PaymentDialog extends BaseUi<PaymentDialog> {
+public class PaymentDialog extends Dialog<PaymentDialog> {
+    public static final int ORDER = 0;
+    public static final int PAYWAY = 1;
+
+    private List<Page> mPages = new ArrayList<>();
 
     @BindView(R3.id.droid_game_sdk_self_dialog_payment_page)
     ViewGroup mPager;
 
     @OnClick(R3.id.droid_game_sdk_self_dialog_payment_swicth_pay_way)
     void onBtnSwitchPayWayClicked(){
-        showPage(1);
+        showPage(PAYWAY);
     }
 
     @OnClick(R3.id.droid_game_sdk_self_dialog_payment_back_to_pay_page)
     void onBtnBackToPayPageClicked(){
-        showPage(0);
+        showPage(ORDER);
     }
 
     @OnClick(R3.id.droid_game_sdk_self_dialog_payment_cancel)
@@ -44,65 +55,64 @@ public class PaymentDialog extends BaseUi<PaymentDialog> {
         return R3.layout.droid_game_sdk_self_dialog_payment;
     }
 
-    private void showPage(int newPage){
+    @Override
+    public void onAfterCreate(UIDialog dialog, UIDialogRootLayout rootLayout, Context context) {
+        super.onAfterCreate(dialog, rootLayout, context);
 
-        try {
-            UIDialog.hideSoftInputDialog(getDialog());
-        }catch (Throwable e){
-            e.printStackTrace();
-        }
+        setup();
+    }
 
-        int oldPageFlag = -1;
-        for (int i = 0; i < mPager.getChildCount(); i++){
-            if (mPager.getChildAt(i).getVisibility() == View.VISIBLE){
-                oldPageFlag = i;
-                break;
-            }
-        }
-
-        if (oldPageFlag == -1){
-            mPager.getChildAt(newPage).setVisibility(View.VISIBLE);
-            return;
-        }
-
-        if (oldPageFlag != newPage){
-            final int oldPage = oldPageFlag;
-            mPager.getChildAt(newPage).setVisibility(View.VISIBLE);
-
-            float f1 = oldPageFlag < newPage ? 1f : -1f;
-            float f2 = oldPageFlag < newPage ? -1f : 1f;
-            TranslateAnimation animation = new TranslateAnimation(
-                    Animation.RELATIVE_TO_SELF,f1,Animation.RELATIVE_TO_SELF,0f,
-                    Animation.RELATIVE_TO_SELF,0f,Animation.RELATIVE_TO_SELF,0f
-            );
-            animation.setDuration(300);
-            mPager.getChildAt(newPage).startAnimation(animation);
-
-            animation = new TranslateAnimation(
-                    Animation.RELATIVE_TO_SELF,0f,Animation.RELATIVE_TO_SELF,f2,
-                    Animation.RELATIVE_TO_SELF,0f,Animation.RELATIVE_TO_SELF,0f
-            );
-            animation.setDuration(300);
-            animation.setAnimationListener(new Animation.AnimationListener() {
-                @Override
-                public void onAnimationStart(Animation animation) {
-
-                }
-
-                @Override
-                public void onAnimationEnd(Animation animation) {
-                    mPager.getChildAt(oldPage).setVisibility(View.GONE);
-                }
-
-                @Override
-                public void onAnimationRepeat(Animation animation) {
-
-                }
-            });
-            mPager.getChildAt(oldPage).startAnimation(animation);
-
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        for (Page page : mPages){
+            page.unbind();
         }
     }
 
+    private void setup(){
+        mPages.add(new Order(mPager,this).bind());
+        mPages.add(new PayWay(mPager,this).bind());
+        showPage(ORDER);
+        ((PayWay)mPages.get(1)).addOnPayWayChangedListener(new Consumer<PayWayInfo>() {
+            @Override
+            public void accept(PayWayInfo payWayInfo) {
+                ((Order)mPages.get(0)).onPayWayChanged(payWayInfo);
+            }
+        });
+    }
+
+    public void showPage(int newPage){
+        UIDialog.hideSoftInputDialog(getDialog());
+        AnimationHelper.animationToPage(mPager,newPage);
+    }
+
+    public PayWayInfo getPayWayInfo(){
+        return PayWayInfo.ALIPAY;
+    }
+
+    public List<PayWayInfo> getSupportPayWayList(){
+        return Arrays.asList(
+                PayWayInfo.ALIPAY,
+                PayWayInfo.WECHAT
+        );
+    }
+
+    public static class PayWayInfo{
+        public final static PayWayInfo ALIPAY = new PayWayInfo("支付宝","alipay");
+        public final static PayWayInfo WECHAT = new PayWayInfo("微信支付","wechat");
+
+        public final String name;
+        public final String tag;
+
+        public PayWayInfo(String name,String tag) {
+            super();
+            this.name = name;
+            this.tag = tag;
+        }
+
+        public boolean equals(PayWayInfo obj) {
+           return name.equals(obj.name) && tag.equals(obj.tag);
+        }
+    }
 }

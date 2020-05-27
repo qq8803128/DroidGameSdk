@@ -30,6 +30,7 @@
                    android:paddingTop="13dp"
                    android:paddingBottom="13dp"
                    android:paddingLeft="26dp"
+                   android:visibility="invisible"
                    android:layout_height="48dp"/>
     </LinearLayout>
 

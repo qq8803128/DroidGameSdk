@@ -68,6 +68,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':support-android-floater-window')
+    
     compileOnly project(':support-common')
     compileOnly project(':support-core')
     compileOnly project(':support-core-bridge')

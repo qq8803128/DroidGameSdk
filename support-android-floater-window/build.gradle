@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+
+    resourcePrefix 'droid_game_sdk_floater_window_manager_'
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly project(':support-annotation')
+    compileOnly project(':support-common')
+}

@@ -1,4 +1,4 @@
-include ':app', ':support-android-oaid', ':support-x2c', ':x2c-compiler', ':support-permission', ':support-admob',
+include ':app', ':support-android-oaid', ':support-x2c', ':x2c-compiler', ':support-permission', ':support-admob', ':support-android-floater-window',
         ':support-android-support', 
         ':plugin-delegate-sdk',
         ':support-butterknife',

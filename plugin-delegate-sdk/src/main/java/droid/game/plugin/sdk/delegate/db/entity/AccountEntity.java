@@ -7,7 +7,7 @@ import droid.game.open.source.orm.db.annotation.Unique;
 import droid.game.open.source.orm.db.enums.AssignType;
 
 @Table("userTable")
-public class UserEntity {
+public class AccountEntity {
     @PrimaryKey(AssignType.AUTO_INCREMENT)
     @Column("__id")
     private int mId;
@@ -62,7 +62,7 @@ public class UserEntity {
         return mUniqueId;
     }
 
-    public UserEntity setUniqueId(String uniqueId) {
+    public AccountEntity setUniqueId(String uniqueId) {
         mUniqueId = uniqueId;
         return this;
     }
@@ -71,7 +71,7 @@ public class UserEntity {
         return mOpenId;
     }
 
-    public UserEntity setOpenId(String openId) {
+    public AccountEntity setOpenId(String openId) {
         mOpenId = openId;
         return this;
     }
@@ -80,7 +80,7 @@ public class UserEntity {
         return mChannelName;
     }
 
-    public UserEntity setChannelName(String channelName) {
+    public AccountEntity setChannelName(String channelName) {
         mChannelName = channelName;
         return this;
     }
@@ -89,7 +89,7 @@ public class UserEntity {
         return mUid;
     }
 
-    public UserEntity setUid(String uid) {
+    public AccountEntity setUid(String uid) {
         mUid = uid;
         return this;
     }
@@ -98,7 +98,7 @@ public class UserEntity {
         return token;
     }
 
-    public UserEntity setToken(String token) {
+    public AccountEntity setToken(String token) {
         this.token = token;
         return this;
     }
@@ -107,7 +107,7 @@ public class UserEntity {
         return mName;
     }
 
-    public UserEntity setName(String name) {
+    public AccountEntity setName(String name) {
         mName = name;
         return this;
     }
@@ -116,7 +116,7 @@ public class UserEntity {
         return mPassword;
     }
 
-    public UserEntity setPassword(String password) {
+    public AccountEntity setPassword(String password) {
         mPassword = password;
         return this;
     }
@@ -125,7 +125,7 @@ public class UserEntity {
         return mTimeStamp;
     }
 
-    public UserEntity setTimeStamp(long timeStamp) {
+    public AccountEntity setTimeStamp(long timeStamp) {
         mTimeStamp = timeStamp;
         return this;
     }
@@ -134,7 +134,7 @@ public class UserEntity {
         return mRole;
     }
 
-    public UserEntity setRole(String role) {
+    public AccountEntity setRole(String role) {
         mRole = role;
         return this;
     }
@@ -143,7 +143,7 @@ public class UserEntity {
         return mServer;
     }
 
-    public UserEntity setServer(String server) {
+    public AccountEntity setServer(String server) {
         mServer = server;
         return this;
     }
@@ -152,7 +152,7 @@ public class UserEntity {
         return mExt1;
     }
 
-    public UserEntity setExt1(String ext1) {
+    public AccountEntity setExt1(String ext1) {
         mExt1 = ext1;
         return this;
     }
@@ -161,7 +161,7 @@ public class UserEntity {
         return mExt2;
     }
 
-    public UserEntity setExt2(String ext2) {
+    public AccountEntity setExt2(String ext2) {
         mExt2 = ext2;
         return this;
     }
@@ -170,7 +170,7 @@ public class UserEntity {
         return mExt3;
     }
 
-    public UserEntity setExt3(String ext3) {
+    public AccountEntity setExt3(String ext3) {
         mExt3 = ext3;
         return this;
     }
@@ -179,7 +179,7 @@ public class UserEntity {
         return mExt4;
     }
 
-    public UserEntity setExt4(String ext4) {
+    public AccountEntity setExt4(String ext4) {
         mExt4 = ext4;
         return this;
     }
@@ -188,7 +188,7 @@ public class UserEntity {
         return mExt5;
     }
 
-    public UserEntity setExt5(String ext5) {
+    public AccountEntity setExt5(String ext5) {
         mExt5 = ext5;
         return this;
     }

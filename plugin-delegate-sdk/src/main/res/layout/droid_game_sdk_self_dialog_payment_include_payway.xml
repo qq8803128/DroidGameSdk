@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:layout_height="260dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp">
+
+            <ImageView android:layout_width="48dp"
+                       android:padding="12dp"
+                       android:src="@mipmap/droid_game_sdk_self_ic_edit_down"
+                       android:rotation="90"
+                       android:id="@+id/droid_game_sdk_self_dialog_payment_back_to_pay_page"
+                       android:layout_height="48dp"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:paddingRight="48dp"
+                      android:text="支付方式"
+                      android:textSize="17sp"
+                      android:textColor="#000000"
+                      android:gravity="center"
+                      android:textStyle="bold"
+                      android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1px" android:background="#95999999"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:background="#ffffff"
+                      android:orientation="vertical"
+                      android:layout_marginBottom="16dp"
+                      android:gravity="center_horizontal"
+                      android:layout_height="match_parent">
+
+            <TextView android:layout_width="match_parent"
+                      android:text="请选择支付方式"
+                      android:gravity="center_vertical"
+                      android:paddingLeft="16dp"
+                      android:textColor="#20C001"
+                      android:textSize="16sp"
+                      android:layout_height="48dp"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1px"
+                  android:background="#95999999"/>
+
+            <ListView android:layout_width="match_parent"
+                      android:layout_weight="1"
+                      android:id="@id/droid_game_sdk_self_dialog_payment_payway_list"
+                      android:layout_height="0dp">
+
+            </ListView>
+            <View android:layout_width="match_parent"
+
+                  android:layout_height="1px" android:background="#95999999"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

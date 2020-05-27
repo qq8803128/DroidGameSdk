@@ -6,11 +6,10 @@ import droid.game.butterknife.annotation.OnClick;
 import droid.game.common.dialog.UIDialog;
 import droid.game.common.dialog.widget.UIDialogRootLayout;
 import droid.game.plugin.sdk.delegate.R3;
-import droid.game.plugin.sdk.delegate.ui.online.BaseUi;
 import droid.game.x2c.annotation.Xml;
 
 @Xml(layouts = {"droid_game_sdk_self_dialog_login_auto"})
-public class AutoLoginDialog extends BaseUi<AutoLoginDialog> {
+public class AutoLoginDialog extends Dialog<AutoLoginDialog> {
     @OnClick(R3.id.droid_game_sdk_self_auto_login_switch)
     void onBtnSwitchAccountClicked(){
         getDialog().cancel();

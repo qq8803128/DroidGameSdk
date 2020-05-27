@@ -10,10 +10,11 @@
                   android:gravity="right"
                   android:layout_height="40dp">
 
-        <droid.game.plugin.sdk.delegate.widget.CloseView android:layout_width="40dp"
-                                                         android:layout_marginRight="8dp"
-                                                         android:background="@drawable/droid_game_sdk_self_shape_close_button_background"
-                                                         android:layout_height="40dp"/>
+        <droid.game.plugin.sdk.delegate.widget.CloseView
+                android:layout_width="40dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="40dp"/>
+
     </LinearLayout>
 
     <ImageView android:layout_width="48dp"

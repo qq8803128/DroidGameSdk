@@ -1,4 +1,4 @@
-package droid.game.plugin.sdk.delegate.ui.online;
+package droid.game.plugin.sdk.delegate.ui.online.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,15 +15,15 @@ import droid.game.common.util.UIResourcesHelper;
 import droid.game.plugin.sdk.delegate.Constants;
 import droid.game.x2c.X2C;
 
-public abstract class BaseUi<T extends BaseUi> extends UIDialogBuilder<T> implements IContextProvider {
+public abstract class Dialog<T extends Dialog> extends UIDialogBuilder<T> implements IContextProvider {
     protected abstract String getLayout();
 
     private Unbinder mUnbinder;
-    public BaseUi(Context context) {
+    public Dialog(Context context) {
         this(context,0.8f);
     }
 
-    public BaseUi(Context context, float percentWidth) {
+    public Dialog(Context context, float percentWidth) {
         super(context);
         setPercent(1.0f);
         setLayout(calcWidth(percentWidth),calcWidth(percentWidth),0,0);

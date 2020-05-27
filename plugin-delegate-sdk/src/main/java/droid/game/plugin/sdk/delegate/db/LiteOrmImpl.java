@@ -23,6 +23,10 @@ public class LiteOrmImpl {
         }
     }
 
+    public LiteOrm getLiteOrm(){
+        return mLiteOrm;
+    }
+
     private static class Holder{
         private static final LiteOrmImpl holder = new LiteOrmImpl();
     }

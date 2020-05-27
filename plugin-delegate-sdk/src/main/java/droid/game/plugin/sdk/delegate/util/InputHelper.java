@@ -1,31 +1,28 @@
 package droid.game.plugin.sdk.delegate.util;
 
+import android.graphics.drawable.GradientDrawable;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Spanned;
 import android.widget.EditText;
 
+import java.lang.ref.WeakReference;
+
+import static droid.game.common.util.Utils.dp;
+
 public class InputHelper {
 
-    public InputHelper with(EditText editText){
+    public static InputHelper with(EditText editText){
         return new InputHelper(editText);
     }
 
-    private EditText mEditText;
+    private WeakReference<EditText> mEditText;
     private InputHelper(EditText editText) {
-        mEditText = editText;
+        mEditText = new WeakReference(editText);
     }
 
     public InputHelper setText(CharSequence charSequence){
         editText().setText(charSequence);
-        return this;
-    }
-
-    public InputHelper setMaxLength(int maxLength){
-        return this;
-    }
-
-    public InputHelper setDigits(String digits){
         return this;
     }
 
@@ -54,28 +51,31 @@ public class InputHelper {
         return this;
     }
 
-    public int getLength(){
-        return editText().getText().toString().length();
+    public InputHelper addFilter(InputFilter filter){
+        InputFilter[] filters = editText().getFilters();
+        int length = filters == null ? 0 : filters.length;
+        InputFilter[] newFilters = new InputFilter[length + 1];
+        if (length == 0){
+            newFilters[0] = filter;
+        }else{
+            System.arraycopy(filters,0,newFilters,0,length);
+            newFilters[length] = filter;
+        }
+        editText().setFilters(newFilters);
+        return this;
     }
 
-    public String getText(){
-        return editText().getText().toString();
+    private EditText editText(){
+        return mEditText.get();
     }
 
-    public EditText editText(){
-        return mEditText;
-    }
-
-    public void unbinder() {
-        mEditText = null;
-    }
-
-    private class DigitsFilter implements InputFilter {
+    public static class DigitsFilter implements InputFilter {
         private final String mDigits;
 
-        DigitsFilter(String digits){
+        public DigitsFilter(String digits){
             mDigits = digits;
         }
+
         @Override
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
             if (mDigits.contains(source)){
@@ -84,4 +84,11 @@ public class InputHelper {
             return "";
         }
     }
+
+    public static class LengthFilter extends InputFilter.LengthFilter{
+        public LengthFilter(int max) {
+            super(max);
+        }
+    }
+
 }

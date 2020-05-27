@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:paddingRight="16dp"
+              android:paddingLeft="16dp"
+              android:layout_width="match_parent"
+              android:gravity="center_vertical"
+              android:layout_height="32dp">
+
+    <TextView android:layout_width="0dp"
+              android:layout_weight="1"
+              android:textColor="#ff8200"
+              android:text="支付宝"
+              android:id="@+id/droid_game_sdk_self_dialog_payment_holder_payway_name"
+              android:textSize="14sp"
+              android:layout_height="wrap_content"/>
+
+    <ImageView android:layout_width="16dp"
+               android:id="@+id/droid_game_sdk_self_dialog_payment_holder_payway_check"
+               android:src="@mipmap/droid_game_sdk_self_ic_pay_selected"
+               android:layout_height="16dp"/>
+</LinearLayout>
