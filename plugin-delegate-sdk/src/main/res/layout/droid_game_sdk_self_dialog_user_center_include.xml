@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:id="@+id/droid_game_sdk_selft_h_user_controller"
+            android:layout_height="wrap_content">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:gravity="center_vertical"
+                      android:paddingLeft="12dp"
+                      android:paddingRight="12dp"
+                      android:orientation="horizontal"
+                      android:layout_height="56dp">
+
+            <ImageView android:layout_width="36dp"
+                       android:src="@mipmap/droid_game_sdk_self_ic_user_avator"
+                       android:layout_height="36dp"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:maxLines="1"
+                      android:ellipsize="end"
+                      android:paddingLeft="8dp"
+                      android:textColor="#000000"
+                      android:textSize="16.5sp"
+                      android:text="XX玩家185****6949"
+                      android:layout_height="wrap_content"/>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+                          android:paddingLeft="8dp"
+                          android:paddingRight="8dp"
+                          android:layout_height="match_parent">
+
+                <ImageView android:layout_width="18dp"
+                           android:padding="1dp"
+                           android:src="@mipmap/droid_game_sdk_self_ic_user_message"
+                           android:layout_height="18dp"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:textSize="11sp"
+                          android:paddingTop="2dp"
+                          android:textColor="#cdcdcd"
+                          android:text="消息"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+                          android:paddingLeft="8dp"
+                          android:paddingRight="8dp"
+                          android:layout_height="match_parent">
+
+                <ImageView android:layout_width="18dp"
+                           android:src="@mipmap/droid_game_sdk_self_ic_user_wallet"
+                           android:layout_height="18dp"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:textSize="11sp"
+                          android:paddingTop="2dp"
+                          android:textColor="#cdcdcd"
+                          android:text="钱包"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+                          android:paddingLeft="8dp"
+                          android:paddingRight="8dp"
+                          android:layout_height="match_parent">
+
+                <ImageView android:layout_width="18dp"
+                           android:padding="1dp"
+                           android:src="@mipmap/droid_game_sdk_self_ic_user_settings"
+                           android:layout_height="18dp"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:textSize="11sp"
+                          android:paddingTop="2dp"
+                          android:textColor="#cdcdcd"
+                          android:text="设置"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+              android:background="#55afafaf"
+              android:layout_height="1px"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_weight="1"
+                  android:orientation="horizontal"
+                  android:layout_height="0dp">
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:id="@+id/droid_game_sdk_selft_v_user_controller"
+                      android:orientation="horizontal"
+                      android:background="#ffffff"
+                      android:layout_height="match_parent">
+
+            <LinearLayout android:layout_width="56dp"
+                          android:gravity="center_horizontal"
+                          android:orientation="vertical"
+                          android:paddingTop="12dp"
+                          android:paddingBottom="12dp"
+                          android:layout_height="match_parent">
+
+                <ImageView android:layout_width="36dp"
+                           android:src="@mipmap/droid_game_sdk_self_ic_user_avator"
+                           android:layout_height="36dp"/>
+
+                <LinearLayout android:layout_width="56dp"
+                              android:layout_marginTop="8dp"
+                              android:orientation="vertical"
+                              android:gravity="center"
+                              android:paddingLeft="8dp"
+                              android:paddingRight="8dp"
+                              android:layout_height="56dp">
+
+                    <ImageView android:layout_width="18dp"
+                               android:padding="1dp"
+                               android:src="@mipmap/droid_game_sdk_self_ic_user_message"
+                               android:layout_height="18dp"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:textSize="11sp"
+                              android:paddingTop="2dp"
+                              android:textColor="#cdcdcd"
+                              android:text="消息"
+                              android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="56dp"
+                              android:orientation="vertical"
+                              android:gravity="center"
+                              android:paddingLeft="8dp"
+                              android:paddingRight="8dp"
+                              android:layout_height="56dp">
+
+                    <ImageView android:layout_width="18dp"
+                               android:src="@mipmap/droid_game_sdk_self_ic_user_wallet"
+                               android:layout_height="18dp"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:textSize="11sp"
+                              android:paddingTop="2dp"
+                              android:textColor="#cdcdcd"
+                              android:text="钱包"
+                              android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="56dp"
+                              android:orientation="vertical"
+                              android:gravity="center"
+                              android:paddingLeft="8dp"
+                              android:paddingRight="8dp"
+                              android:layout_height="56dp">
+
+                    <ImageView android:layout_width="18dp"
+                               android:padding="1dp"
+                               android:src="@mipmap/droid_game_sdk_self_ic_user_settings"
+                               android:layout_height="18dp"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:textSize="11sp"
+                              android:paddingTop="2dp"
+                              android:textColor="#cdcdcd"
+                              android:text="设置"
+                              android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_width="1px"
+                  android:layout_height="match_parent"
+            android:background="#55afafaf"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

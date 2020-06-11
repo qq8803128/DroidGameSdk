@@ -25,16 +25,29 @@ public class UserDialog extends Dialog<UserDialog> {
     @BindView(R3.id.droid_game_sdk_self_user_center_container)
     View mContainer;
 
+    @BindView(R3.id.droid_game_sdk_self_user_center_vertical_shadow)
+    View mVerticalShadowView;
+
+    @BindView(R3.id.droid_game_sdk_self_user_center_horizontal_shadow)
+    View mHorizontalShadowView;
+
+    @BindView(R3.id.droid_game_sdk_selft_h_user_controller)
+    View mHorizontalController;
+
+    @BindView(R3.id.droid_game_sdk_selft_v_user_controller)
+    View mVerticalController;
+
     public UserDialog(Context context) {
         super(context, 1.0f);
-        setCancelable(true);
-        setCanceledOnTouchOutside(true);
+        setCancelable(false);
+        setCanceledOnTouchOutside(false);
 
         if (Utils.portrait()) {
             setGravity(Gravity.BOTTOM);
         } else {
             setGravity(Gravity.LEFT);
         }
+        setDimAmount(0.0f);
     }
 
     @Override
@@ -69,7 +82,6 @@ public class UserDialog extends Dialog<UserDialog> {
         } else {
             dialogView.setPadding(0, 0, (int) (windowWidth() * 0.5f), 0);
         }
-
         dialogView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,16 +104,10 @@ public class UserDialog extends Dialog<UserDialog> {
     }
 
     private void setup() {
-        float startX = 0;
-        float startY = 1;
+        float startX = !Utils.portrait() ? -1 : 0;
+        float startY = !Utils.portrait() ? 0 : 1;
         float endX = 0;
         float endY = 0;
-        if (!Utils.portrait()) {
-            startX = -1;
-            endX = 0;
-            startY = 0;
-            endY = 0;
-        }
         TranslateAnimation animation = new TranslateAnimation(
                 Animation.RELATIVE_TO_SELF, startX, Animation.RELATIVE_TO_SELF, endX,
                 Animation.RELATIVE_TO_SELF, startY, Animation.RELATIVE_TO_SELF, endY
@@ -115,23 +121,24 @@ public class UserDialog extends Dialog<UserDialog> {
 
             }
         });
+
+        mHorizontalShadowView.setVisibility(!Utils.portrait() ? View.GONE : View.VISIBLE);
+        mVerticalShadowView.setVisibility(!Utils.portrait() ? View.VISIBLE : View.GONE);
+
+        mVerticalController.setVisibility(!Utils.portrait() ? View.VISIBLE : View.GONE);
+        mHorizontalController.setVisibility(!Utils.portrait() ? View.GONE : View.VISIBLE);
     }
 
     private void dismiss() {
         float startX = 0;
         float startY = 0;
-        float endX = 0;
-        float endY = 1;
-        if (!Utils.portrait()) {
-            startX = 0;
-            endX = -1;
-            startY = 0;
-            endY = 0;
-        }
+        float endX = !Utils.portrait() ? -1 : 0;
+        float endY = !Utils.portrait() ? 0 : 1;
         TranslateAnimation animation = new TranslateAnimation(
                 Animation.RELATIVE_TO_SELF, startX, Animation.RELATIVE_TO_SELF, endX,
                 Animation.RELATIVE_TO_SELF, startY, Animation.RELATIVE_TO_SELF, endY
         );
+
         animation.setDuration(250);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override

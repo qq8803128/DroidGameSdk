@@ -5,9 +5,34 @@
 
     <LinearLayout android:layout_width="match_parent"
                   android:id="@+id/droid_game_sdk_self_user_center_container"
-                  android:background="#ffffff"
                   android:orientation="vertical"
                   android:layout_height="match_parent">
 
+        <View android:layout_width="match_parent"
+              android:id="@+id/droid_game_sdk_self_user_center_horizontal_shadow"
+              android:background="@drawable/droid_game_sdk_self_shape_shadow_horizontal"
+              android:layout_height="6dp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:layout_height="match_parent">
+
+            <LinearLayout android:layout_width="0dp"
+                          android:layout_height="match_parent"
+                          android:background="#ffffff"
+                          android:layout_weight="1">
+
+                <include
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        layout="@layout/droid_game_sdk_self_dialog_user_center_include"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="6dp"
+                  android:id="@+id/droid_game_sdk_self_user_center_vertical_shadow"
+                  android:background="@drawable/droid_game_sdk_self_shape_shadow_vertical"
+                  android:layout_height="match_parent"/>
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>

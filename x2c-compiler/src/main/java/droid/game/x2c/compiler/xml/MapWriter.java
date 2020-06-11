@@ -59,7 +59,7 @@ public class MapWriter {
                         stringBuilder.append(String.format(" else if (sdk >= %s) {", sdk));
                     }
                 }
-                stringBuilder.append(String.format("\n\tview = new %s().createView(context);\n}", mJavaNames.get(i)));
+                stringBuilder.append(String.format("\n\tview = new %s().createView(context,cloneInContext);\n}", mJavaNames.get(i)));
             }
             stringBuilder.append("\nreturn view");
         }

@@ -10,6 +10,8 @@ import static droid.game.common.util.Utils.dp;
 
 public class FtImageView extends ImageView {
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final int DIVIDER_COLOR = 0x75000000;
+    private final int FILL_COLOR = 0xffafafaf;
     public FtImageView(Context context) {
         super(context);
     }
@@ -42,7 +44,7 @@ public class FtImageView extends ImageView {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(r * 2);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setColor(0xfffafbfc);
+        mPaint.setColor(FILL_COLOR);
 
         int s = dp(10);
         RectF rectF = new RectF(s,s / 3,canvas.getWidth() - s,canvas.getHeight() - s / 3);
@@ -53,7 +55,7 @@ public class FtImageView extends ImageView {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(r * 2 + 1);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setColor(0x75000000);
+        mPaint.setColor(DIVIDER_COLOR);
 
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP));
 
@@ -66,7 +68,7 @@ public class FtImageView extends ImageView {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(r * 2);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setColor(0xfffafbfc);
+        mPaint.setColor(FILL_COLOR);
 
         int s = dp(10);
         RectF rectF = new RectF(s,s / 3,canvas.getWidth() - s,canvas.getHeight() - s / 3);
@@ -75,7 +77,7 @@ public class FtImageView extends ImageView {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(r * 2 + 1);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setColor(0x75000000);
+        mPaint.setColor(DIVIDER_COLOR);
 
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP));
 
@@ -84,7 +86,7 @@ public class FtImageView extends ImageView {
     }
 
     private void drawNormal(Canvas canvas) {
-        int size = dp(7);
+        int size = dp(10);
 
         mPaint.setXfermode(null);
         mPaint.setStyle(Paint.Style.FILL);
