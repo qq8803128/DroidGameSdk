@@ -74,7 +74,7 @@ public class Json {
                     String key = k.toString();
                     Map<String,Object> map = (Map<String, Object>) o;
                     object = map.get(key);
-                    if (object instanceof Map){
+                    if (object instanceof Map || object instanceof List){
                         o = object;
                     }
                 }
